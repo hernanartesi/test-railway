@@ -1,0 +1,12 @@
+const { Sequelize } = require('sequelize');
+require('dotenv').config()
+
+
+const dbConnection = new Sequelize(process.env.DB_NAME, process.env.DB_USER,process.env.DB_PASS, {
+    host: process.env.MYSQL_URL,
+    dialect: 'mysql'
+})
+
+module.exports = {
+    dbConnection
+}
